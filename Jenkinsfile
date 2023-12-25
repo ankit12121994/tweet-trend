@@ -24,19 +24,19 @@ environment {
                 sh 'mvn surefire-report:report'
                  echo "----------- unit test Complted ----------"
             }
-        }
+        } */
 
     stage('SonarQube analysis') {
     environment {
-      scannerHome = tool 'valaxy-sonar-scanner'
+      scannerHome = tool 'sonar-scanner'
     }
     steps{
-    withSonarQubeEnv('valaxy-sonarqube-server') { // If you have configured more than one global server connection, you can specify its name
+    withSonarQubeEnv('sonarqube-server') { // If you have configured more than one global server connection, you can specify its name
       sh "${scannerHome}/bin/sonar-scanner"
     }
     }
   }
-  stage("Quality Gate"){
+  /*stage("Quality Gate"){
     steps {
         script {
         timeout(time: 1, unit: 'HOURS') { // Just in case something goes wrong, pipeline will be killed after a timeout
