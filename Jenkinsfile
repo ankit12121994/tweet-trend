@@ -1,4 +1,4 @@
-//def registry = 'https://valaxy05.jfrog.io'
+def registry = 'https://valaxy500.jfrog.io'
 //def imageName = 'valaxy05.jfrog.io/valaxy-docker-local/ttrend'
 //def version   = '2.1.4'
 pipeline {
@@ -48,7 +48,7 @@ environment {
 }
     }
   }
-         /*stage("Jar Publish") {
+         stage("Jar Publish") {
         steps {
             script {
                     echo '<--------------- Jar Publish Started --------------->'
@@ -58,7 +58,7 @@ environment {
                           "files": [
                             {
                               "pattern": "jarstaging/(*)",
-                              "target": "libs-release-local/{1}",
+                              "target": "valaxy-libs-release/{1}",
                               "flat": "false",
                               "props" : "${properties}",
                               "exclusions": [ "*.sha1", "*.md5"]
@@ -75,7 +75,7 @@ environment {
     }
 
 
-    stage(" Docker Build ") {
+    /*stage(" Docker Build ") {
       steps {
         script {
            echo '<--------------- Docker Build Started --------------->'
