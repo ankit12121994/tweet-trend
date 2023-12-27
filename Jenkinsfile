@@ -1,6 +1,6 @@
 def registry = 'https://valaxy500.jfrog.io'
-//def imageName = 'valaxy05.jfrog.io/valaxy-docker-local/ttrend'
-//def version   = '2.1.4'
+def imageName = 'valaxy05.jfrog.io/valaxy-docker-local/ttrend'
+def version   = '2.1.4'
 pipeline {
     agent {
         node {
@@ -75,7 +75,7 @@ environment {
     }
 
 
-    /*stage(" Docker Build ") {
+    stage(" Docker Build ") {
       steps {
         script {
            echo '<--------------- Docker Build Started --------------->'
@@ -89,7 +89,7 @@ environment {
         steps {
             script {
                echo '<--------------- Docker Publish Started --------------->'  
-                docker.withRegistry(registry, 'artfiact-cred'){
+                docker.withRegistry(registry, 'artifact-cred'){
                     app.push()
                 }    
                echo '<--------------- Docker Publish Ended --------------->'  
@@ -97,7 +97,7 @@ environment {
         }
     }
 
-stage(" Deploy ") {
+/*stage(" Deploy ") {
        steps {
          script {
             echo '<--------------- Helm Deploy Started --------------->'
